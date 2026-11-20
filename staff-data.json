@@ -1,0 +1,97 @@
+{
+  "imageBaseUrl": "https://saflqkpdqtwxwannidiu.supabase.co/storage/v1/object/public/ehop-staff/",
+  "giveUrl": "https://ehopindonesia.com/give/",
+  "staff": [
+    {
+      "name": "Wimpy Rus Santoso",
+      "role": "Ketua Yayasan",
+      "tier": "ketua",
+      "group": "pengurus",
+      "photo": "WIMPY"
+    },
+    {
+      "name": "Mayty Sinta Rosalisa",
+      "role": "Sekretaris",
+      "tier": "pengurus",
+      "group": "pengurus",
+      "photo": "MAYTY"
+    },
+    {
+      "name": "Monica Gracia Irjanto",
+      "role": "Bendahara 1",
+      "tier": "pengurus",
+      "group": "pengurus",
+      "photo": "Monica Gracia"
+    },
+    {
+      "name": "Kezia Gita Almara",
+      "role": "Bendahara 2",
+      "tier": "pengurus",
+      "group": "pengurus",
+      "photo": "KEZIA"
+    },
+    {
+      "name": "Ister Kristiani",
+      "role": "Manajer Operasional",
+      "tier": "manajemen",
+      "group": "manajemen",
+      "photo": "ISTER"
+    },
+    {
+      "name": "P. Adinda Rukmi",
+      "role": "Manajer Program",
+      "tier": "manajemen",
+      "group": "manajemen",
+      "photo": "ADINDA"
+    },
+    {
+      "name": "Dimas Binariyo Tarigan",
+      "role": "Manajer HRD",
+      "tier": "manajemen",
+      "group": "manajemen",
+      "photo": "DIMAS"
+    },
+    {
+      "name": "Ryon Ravi Kosasi",
+      "role": "Dokumentasi & Multimedia",
+      "tier": "manajemen",
+      "group": "manajemen",
+      "photo": "RYON"
+    },
+    {
+      "name": "Daniel Glorius S. H.",
+      "role": "Anggota Tim",
+      "tier": "anggota",
+      "group": "anggota",
+      "photo": "DANIEL"
+    },
+    {
+      "name": "Carenova Gobel",
+      "role": "Anggota Tim",
+      "tier": "anggota",
+      "group": "anggota",
+      "photo": "CAREN"
+    },
+    {
+      "name": "Siswo Anggowo Utama",
+      "role": "Anggota Tim",
+      "tier": "anggota",
+      "group": "anggota",
+      "photo": "ANGGO"
+    },
+    {
+      "name": "Asni Elvia Kabangnga",
+      "role": "Anggota Tim",
+      "tier": "anggota",
+      "group": "anggota",
+      "photo": "ASNI"
+    },
+    {
+      "name": "Danang Diaz Saputro",
+      "role": "Anggota Tim",
+      "tier": "anggota",
+      "group": "anggota",
+      "photo": "SASTRO"
+    }
+  ]
+}
