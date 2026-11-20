@@ -1,13 +1,14 @@
 const assetRoot=new URL('./',import.meta.url);
+const release='2026-11-20b';
 class EhopStaff extends HTMLElement {
  connectedCallback(){if(this._started)return;this._started=true;this.mount().catch(error=>{console.error('EHOP staff:',error);this.shadowRoot.replaceChildren(Object.assign(document.createElement('p'),{textContent:'Konten tim belum dapat dimuat. Silakan muat ulang halaman.'}));});}
  async mount(){
  const root=this.attachShadow({mode:'open'});let savedOverflow='';
  root.innerHTML='<p role="status" style="padding:32px;font:16px Arial">Memuat tim EHOP…</p>';
- const get=async file=>{const response=await fetch(new URL(file,assetRoot));if(!response.ok)throw new Error(file+': '+response.status);return response;};
+ const get=async file=>{const url=new URL(file,assetRoot);url.searchParams.set('v',release);const response=await fetch(url);if(!response.ok)throw new Error(file+': '+response.status);return response;};
  const [template,data]=await Promise.all([get('staff-template.html').then(r=>r.text()),get('staff-data.json').then(r=>r.json())]);
  const staff=data.staff;const imageBase=new URL(this.getAttribute('image-base')||data.imageBaseUrl,assetRoot);
- const stylesheet=document.createElement('link');stylesheet.rel='stylesheet';stylesheet.href=new URL('staff.css',assetRoot).href;
+ const stylesheet=document.createElement('link');stylesheet.rel='stylesheet';stylesheet.href=new URL('staff.css?v='+release,assetRoot).href;
  const styled=new Promise((resolve,reject)=>{stylesheet.onload=resolve;stylesheet.onerror=()=>reject(new Error('Stylesheet tidak dapat dimuat'));});
  root.replaceChildren(stylesheet);await styled;
  const fragment=document.createElement('template');fragment.innerHTML=template;root.append(fragment.content.cloneNode(true));
@@ -27,7 +28,7 @@ function openProfile(person,trigger){
   root.querySelector('#profile-name').textContent=person.name;
   root.querySelector('#profile-role').textContent=person.role;
   root.querySelector('#profile-group').textContent=groups[person.group];
-  const image=root.querySelector('#profile-photo');image.src=photoPath(person);image.alt='Potret '+person.name;
+  const image=root.querySelector('#profile-photo');image.src=photoPath(person);image.alt='Potret '+person.name;image.dataset.photoId=person.photo;
   root.querySelector('#profile-description').textContent=person.tier==='ketua'
     ? person.name+' tercantum sebagai Ketua Yayasan dalam struktur organisasi Yayasan EHOP Indonesia.'
     : person.name+' merupakan bagian dari '+groups[person.group].toLowerCase()+' dalam struktur organisasi Yayasan EHOP Indonesia.';
@@ -38,7 +39,7 @@ staff.forEach(person=>{
   const button=document.createElement('button');button.type='button';button.className='person';
   button.setAttribute('aria-label','Kenali '+person.name+', '+person.role);button.setAttribute('aria-haspopup','dialog');
   const portrait=document.createElement('span');portrait.className='portrait';
-  const image=document.createElement('img');image.src=photoPath(person);image.alt='';image.loading='lazy';image.decoding='async';
+  const image=document.createElement('img');image.src=photoPath(person);image.alt='';image.loading='lazy';image.decoding='async';image.dataset.photoId=person.photo;
   portrait.append(image);
   const plus=document.createElement('span');plus.className='person-plus';plus.textContent='+';plus.setAttribute('aria-hidden','true');portrait.append(plus);
   const caption=document.createElement('span');caption.className='hover-caption';caption.textContent='Kenali lebih dekat';caption.setAttribute('aria-hidden','true');portrait.append(caption);

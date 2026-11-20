@@ -40,3 +40,17 @@
 @media(max-width:700px){.hero-inner{padding-top:45px;padding-bottom:50px;gap:32px}.floating-team{min-height:425px;max-width:390px}.floating-team .hero-photo{width:36%;height:190px}.floating-team .float-one{left:2%;top:3%}.floating-team .float-two{right:4%;top:0}.floating-team .float-three{left:31%;top:27%}.floating-team .float-four{left:0;bottom:0}.floating-team .float-five{right:0;bottom:0}.floating-team .art-caption{bottom:-28px;font-size:.68rem}}
 @media(max-width:360px){.floating-team{min-height:365px}.floating-team .hero-photo{height:165px}}
 @media(prefers-reduced-motion:reduce){.floating-team .hero-photo{animation:none!important}}
+
+/* Penyelarasan crop Anggo dan penekanan Ketua Yayasan. */
+.person .portrait img[data-photo-id="ANGGO"]{transform:scale(1.75);transform-origin:50% 0}
+.person:hover .portrait img[data-photo-id="ANGGO"],.person:focus-visible .portrait img[data-photo-id="ANGGO"]{transform:scale(1.8)}
+#profile-dialog .dialog-photo img[data-photo-id="ANGGO"]{transform:scale(1.35);transform-origin:50% 0}
+.leader-grid{grid-template-columns:minmax(240px,330px)}
+.tier-leader .person{border:2px solid #fa863e;box-shadow:0 12px 38px #620f2120}
+.tier-leader .portrait{background:linear-gradient(145deg,#76152b,#480b19);aspect-ratio:1/1.04}
+.tier-leader .portrait img{transform:scale(1.04);transform-origin:50% 0}
+.tier-leader .person:hover .portrait img,.tier-leader .person:focus-visible .portrait img{transform:scale(1.08)}
+.tier-leader .person-name{font-size:1.16rem;font-weight:700}
+.tier-leader .person-info{padding:21px 22px 23px}
+@media(max-width:700px){.leader-grid{grid-template-columns:minmax(230px,300px)}}
+
