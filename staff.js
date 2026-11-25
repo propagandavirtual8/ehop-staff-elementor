@@ -1,5 +1,5 @@
 const assetRoot=new URL('./',import.meta.url);
-const release='2026-11-25b';
+const release='2026-11-25c';
 class EhopStaff extends HTMLElement {
  connectedCallback(){if(this._started)return;this._started=true;this.mount().catch(error=>{console.error('EHOP staff:',error);this.shadowRoot.replaceChildren(Object.assign(document.createElement('p'),{textContent:'Konten tim belum dapat dimuat. Silakan muat ulang halaman.'}));});}
  async mount(){
