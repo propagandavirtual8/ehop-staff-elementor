@@ -53,4 +53,6 @@
 .tier-leader .person-name{font-size:1.16rem;font-weight:700}
 .tier-leader .person-info{padding:21px 22px 23px}
 @media(max-width:700px){.leader-grid{grid-template-columns:minmax(230px,300px)}}
-
+/* Ruang lebih lega di bawah header website EHOP. */
+.hero-inner{min-height:780px;padding-top:155px;padding-bottom:85px}
+@media(max-width:700px){.hero-inner{min-height:0;padding-top:115px;padding-bottom:60px}}
